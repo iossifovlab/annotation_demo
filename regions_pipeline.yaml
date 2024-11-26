@@ -1,3 +1,6 @@
+- simple_effect_annotator:
+    gene_models: hg38/gene_models/refSeq_v20200330
+
 - position_score: 
     resource_id: hg38/scores/phastCons100way
     attributes:
@@ -7,10 +10,5 @@
     - name: max_phast_cons
       source: phastCons100way
       position_aggregator: max 
-    - name: all_phast_cons
-      source: phastCons100way
-      position_aggregator: list 
  
-- simple_effect_annotator:
-    gene_models: hg38/gene_models/refSeq_v20200330
      

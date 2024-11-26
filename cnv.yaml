@@ -1,0 +1,25 @@
+- cnv_collection:
+    resource_id: hg38/cnv_collections/Iossifov_Lab_SSC_AGRE_2021
+    cnv_filter: >
+        cnv.attributes["affected_status"] == "affected" and
+        cnv.attributes["variant"] == "deletion"
+    attributes:
+    - name: number_of_deletions
+      source: count
+
+- cnv_collection:
+    resource_id: hg38/cnv_collections/Iossifov_Lab_SSC_AGRE_2021
+    cnv_filter: >
+        cnv.attributes["affected_status"] == "affected" and
+        cnv.attributes["variant"] == "duplication"
+    attributes:
+    - name: number_of_duplications 
+      source: count
+
+
+- cnv_collection:
+    resource_id: hg38/cnv_collections/autism_recurrent_cnv_loci
+    attributes:
+    - name: in_an_autism_recurrent_locus 
+      source: count
+

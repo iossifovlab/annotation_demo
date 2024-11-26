@@ -4,5 +4,4 @@
 
 - effect_annotator:
     gene_models: hg38/gene_models/refSeq_v20200330
-    genome: hg38/genomes/GRCh38-hg38 ## this will go
      

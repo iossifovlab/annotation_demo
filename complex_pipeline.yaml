@@ -1,0 +1,78 @@
+preamble:
+  summary: Demo pipeline. 
+  description: Demonstrates some of the features of pipelines. 
+  input_reference_genome: hg38/genomes/GRCh38-hg38
+  metadata:
+    author: Ivan Iossifov 
+
+annotators:
+
+- allele_score: 
+    resource_id: hg38/scores/ClinVar_20240730 
+    attributes:
+    - CLNSIG
+    - CLNDN
+
+- np_score: 
+    resource_id: hg38/scores/dbNSFP4.9a 
+    attributes:
+    - MVP_rankscore
+    - REVEL_rankscore
+    - MutationTaster_converted_rankscore
+
+- normalize_allele_annotator:
+    genome: hg38/genomes/GRCh38-hg38
+
+- allele_score:
+    resource_id: hg38/variant_frequencies/gnomAD_4.1.0/exomes/ALL 
+    input_annotatable: normalized_allele
+    attributes:
+    - name: gnomAD_4.1_af
+      source: AF_percent 
+
+- effect_annotator:
+    gene_models: hg38/gene_models/MANE/1.3
+    attributes:
+    - worst_effect
+    - name: mane_effect_details
+      source: effect_details
+
+- effect_annotator:
+    gene_models: hg38/gene_models/GENCODE/46/basic/PRI 
+    attributes:
+    - name: genecode_worst_effect
+      source: worst_effect
+    - name: gene_list 
+      internal: true
+
+- gene_score_annotator:
+    resource_id: gene_properties/gene_scores/pLI
+    input_gene_list: gene_list
+    attributes:
+    - name: pLI_rank_all
+      source: pLI_rank
+    - name: pLI_rank_min
+      source: pLI_rank
+      gene_aggregator: min 
+
+- gene_set_annotator:
+    resource_id: gene_properties/gene_sets/autism
+    gene_set_id: "Satterstrom Buxbaum Cell 2020 top"  
+    input_gene_list: gene_list 
+
+- liftover_annotator:
+    chain: liftover/hg38ToHg19
+    source_genome: hg38/genomes/GRCh38-hg38
+    target_genome: hg19/genomes/GATK_ResourceBundle_5777_b37_phiX174
+    attributes:
+    - source: liftover_annotatable
+      name: hg19_annotatable
+      internal: true
+
+- position_score:
+    resource_id: hg19/scores/fitCons2/FitCons2_E06*
+    input_annotatable: hg19_annotatable 
+
+
+
+
