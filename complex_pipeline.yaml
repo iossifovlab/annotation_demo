@@ -43,7 +43,7 @@ annotators:
     - name: genecode_worst_effect
       source: worst_effect
     - name: gene_list 
-      internal: true
+      internal: true 
 
 - gene_score_annotator:
     resource_id: gene_properties/gene_scores/pLI
@@ -60,10 +60,22 @@ annotators:
     gene_set_id: "Satterstrom Buxbaum Cell 2020 top"  
     input_gene_list: gene_list 
 
+# - gene_set_annotator:
+#     resource_id: gene_properties/gene_sets/autism
+#     input_gene_list: gene_list 
+#     attributes:
+#     - name: "Satterstrom Buxbaum Cell 2020 top"  
+#     - name: "Iossxxx" 
+#     - name: in_sets
+#     # In general, two types of attributes:
+#     # 1. <set id>
+#     # 2. "in_sets" 
+
+
 - liftover_annotator:
     chain: liftover/hg38ToHg19
-    source_genome: hg38/genomes/GRCh38-hg38
-    target_genome: hg19/genomes/GATK_ResourceBundle_5777_b37_phiX174
+    # source_genome: hg38/genomes/GRCh38-hg38
+    # target_genome: hg19/genomes/GATK_ResourceBundle_5777_b37_phiX174
     attributes:
     - source: liftover_annotatable
       name: hg19_annotatable

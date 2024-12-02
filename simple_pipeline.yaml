@@ -3,5 +3,5 @@
 - allele_score: hg38/variant_frequencies/gnomAD_4.1.0/exomes/ALL
 
 - effect_annotator:
-    gene_models: hg38/gene_models/refSeq_v20200330
+    gene_models: hg38/gene_models/MANE/1.3
      
