@@ -57,20 +57,9 @@ annotators:
 
 - gene_set_annotator:
     resource_id: gene_properties/gene_sets/autism
-    gene_set_id: "Satterstrom Buxbaum Cell 2020 top"  
     input_gene_list: gene_list 
-
-# - gene_set_annotator:
-#     resource_id: gene_properties/gene_sets/autism
-#     input_gene_list: gene_list 
-#     attributes:
-#     - name: "Satterstrom Buxbaum Cell 2020 top"  
-#     - name: "Iossxxx" 
-#     - name: in_sets
-#     # In general, two types of attributes:
-#     # 1. <set id>
-#     # 2. "in_sets" 
-
+    attributes:
+    - "Satterstrom Buxbaum Cell 2020 top"  
 
 - liftover_annotator:
     chain: liftover/hg38ToHg19
