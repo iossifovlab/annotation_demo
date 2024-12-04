@@ -1,0 +1,19 @@
+chrom	pos	ref	alt	phastcons100way	gnomad_v4_exome_ALL_af	worst_effect	effect_details	gene_effects
+chr1	1287138	C	A	0.001		nonsense	ENST00000379116.10:SCNN1D:nonsense:383/802(Tyr->End)	SCNN1D:nonsense
+chr1	3602485	AC	A	1		frame-shift	ENST00000356575.9:MEGF6:frame-shift:82/1541	MEGF6:frame-shift
+chr1	12115730	G	A	1		splice-site	ENST00000263932.7:TNFRSF8:splice-site:316/595	TNFRSF8:splice-site
+chr1	15929267	G	GA	1		frame-shift	ENST00000375759.8:SPEN:frame-shift:1010/3664	SPEN:frame-shift
+chr1	20639952	C	T	0.597	8.22e-06	nonsense	ENST00000321556.5:PINK1:nonsense:246/581(Arg->End)	PINK1:nonsense
+chr1	21257524	C	T	1		splice-site	ENST00000374893.11:ECE1:splice-site:277/770	ECE1:splice-site
+chr1	22910448	C	T	1		nonsense	ENST00000374630.8:EPHB2:nonsense:857/986(Gln->End)	EPHB2:nonsense
+chr1	27550357	G	GT	0.536		frame-shift	ENST00000673934.1:AHDC1:frame-shift:586/1603	AHDC1:frame-shift
+chr1	32077257	C	T	1	3.42e-06	nonsense	ENST00000336294.10:TMEM39B:nonsense:177/492(Arg->End)	TMEM39B:nonsense
+chr1	34165789	CG	C	0.00533	6.84e-07	intergenic	intergenic:intergenic:intergenic:intergenic	intergenic:intergenic
+chr1	40409787	T	A	1		nonsense	ENST00000372718.8:SMAP2:nonsense:118/429(Tyr->End)	SMAP2:nonsense
+chr1	41583044	C	CG	1		frame-shift	ENST00000372583.6:HIVEP3:frame-shift:585/2406	HIVEP3:frame-shift
+chr1	145845711	G	GTG	0.529		frame-shift	ENST00000334513.6:NUDT17:frame-shift:24/328	NUDT17:frame-shift
+chr1	151427960	C	T	1	1.37e-06	missense	ENST00000271715.7:POGZ:missense:314/1410(Ser->Asn)	POGZ:missense
+chr1	151406993	G	GGTAC	0.979		frame-shift	ENST00000271715.7:POGZ:frame-shift:821/1410	POGZ:frame-shift
+chr1	151405427	T	TCGTCATCA	1		frame-shift	ENST00000271715.7:POGZ:frame-shift:1203/1410	POGZ:frame-shift
+chr1	151406013	G	A	0.918		nonsense	ENST00000271715.7:POGZ:nonsense:1008/1410(Arg->End)	POGZ:nonsense
+chr1	151411761	T	C	1		missense	ENST00000271715.7:POGZ:missense:597/1410(Tyr->Cys)	POGZ:missense

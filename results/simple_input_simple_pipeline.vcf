@@ -1,0 +1,25 @@
+##fileformat=VCFv4.1
+##FILTER=<ID=PASS,Description="All filters passed">
+##reference=GRCh38-hg38
+##contig=<ID=chr1>
+##pipeline_annotation_tool=GPF variant annotation.
+##pipeline_annotation_tool=/mnt/wigtop1/home/iossifov/mambaforge/envs/grr/bin/annotate_vcf simple_input.vcf simple_pipeline.yaml -f -j 1 -o results/simple_input_simple_pipeline.vcf
+##INFO=<ID=phastcons100way,Number=A,Type=String,Description="The score is a number that reflects the conservation at a position.">
+##INFO=<ID=gnomad_v4_exome_ALL_af,Number=A,Type=String,Description="Alternate allele frequency">
+##INFO=<ID=worst_effect,Number=A,Type=String,Description="Worst effect accross all transcripts.">
+##INFO=<ID=effect_details,Number=A,Type=String,Description="Effect details for each affected transcript. Format: `< transcript 1 >:<gene 1>:<effect 1>:<details 1>|...`">
+##INFO=<ID=gene_effects,Number=A,Type=String,Description="Effects types for genes. Format: `<gene_1>:<effect_1>|...` A gene can be repeated.">
+##INFO=<ID=gene_list,Number=A,Type=String,Description="List of all genes">
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO
+chr1	1287138	.	C	A	.	.	phastcons100way=0.001;worst_effect=nonsense;effect_details=ENST00000379116.10:SCNN1D:nonsense:383/802(Tyr->End);gene_effects=SCNN1D:nonsense;gene_list=SCNN1D
+chr1	3602485	.	AC	A	.	.	phastcons100way=1;worst_effect=frame-shift;effect_details=ENST00000356575.9:MEGF6:frame-shift:82/1541;gene_effects=MEGF6:frame-shift;gene_list=MEGF6
+chr1	12115730	.	G	A	.	.	phastcons100way=1;worst_effect=splice-site;effect_details=ENST00000263932.7:TNFRSF8:splice-site:316/595;gene_effects=TNFRSF8:splice-site;gene_list=TNFRSF8
+chr1	15929267	.	G	GA	.	.	phastcons100way=1;worst_effect=frame-shift;effect_details=ENST00000375759.8:SPEN:frame-shift:1010/3664;gene_effects=SPEN:frame-shift;gene_list=SPEN
+chr1	20639952	.	C	T	.	.	phastcons100way=0.597;gnomad_v4_exome_ALL_af=8.22e-06;worst_effect=nonsense;effect_details=ENST00000321556.5:PINK1:nonsense:246/581(Arg->End);gene_effects=PINK1:nonsense;gene_list=PINK1
+chr1	21257524	.	C	T	.	.	phastcons100way=1;worst_effect=splice-site;effect_details=ENST00000374893.11:ECE1:splice-site:277/770;gene_effects=ECE1:splice-site;gene_list=ECE1
+chr1	22910448	.	C	T	.	.	phastcons100way=1;worst_effect=nonsense;effect_details=ENST00000374630.8:EPHB2:nonsense:857/986(Gln->End);gene_effects=EPHB2:nonsense;gene_list=EPHB2
+chr1	27550357	.	G	GT	.	.	phastcons100way=0.536;worst_effect=frame-shift;effect_details=ENST00000673934.1:AHDC1:frame-shift:586/1603;gene_effects=AHDC1:frame-shift;gene_list=AHDC1
+chr1	32077257	.	C	T	.	.	phastcons100way=1;gnomad_v4_exome_ALL_af=3.42e-06;worst_effect=nonsense;effect_details=ENST00000336294.10:TMEM39B:nonsense:177/492(Arg->End);gene_effects=TMEM39B:nonsense;gene_list=TMEM39B
+chr1	34165789	.	CG	C	.	.	phastcons100way=0.00533;gnomad_v4_exome_ALL_af=6.84e-07;worst_effect=intergenic;effect_details=intergenic:intergenic:intergenic:intergenic;gene_effects=intergenic:intergenic;gene_list=intergenic
+chr1	40409787	.	T	A	.	.	phastcons100way=1;worst_effect=nonsense;effect_details=ENST00000372718.8:SMAP2:nonsense:118/429(Tyr->End);gene_effects=SMAP2:nonsense;gene_list=SMAP2
+chr1	41583044	.	C	CG	.	.	phastcons100way=1;worst_effect=frame-shift;effect_details=ENST00000372583.6:HIVEP3:frame-shift:585/2406;gene_effects=HIVEP3:frame-shift;gene_list=HIVEP3

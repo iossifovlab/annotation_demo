@@ -1,0 +1,5 @@
+chrom	pos_beg	pos_end	effect	genes	mean_phast_cons	max_phast_cons
+chr1	2000000	2000100	peripheral	CFAP74	0.00375	0.017
+chr1	2000600	2000620	peripheral	CFAP74	0.000381	0.002
+chr14	21426165	21426427	coding	CHD8	0.373	1
+chr16	30108313	30108420	coding	GDPD3	0.215	1

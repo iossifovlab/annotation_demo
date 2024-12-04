@@ -1,0 +1,5 @@
+chrom	pos_beg	pos_end	phastcons100way	gnomad_v4_exome_ALL_af	worst_effect	effect_details	gene_effects
+chr1	2000000	2000100	0.00375		unknown	ENST00000682832.2:CFAP74:unknown:101	CFAP74:unknown
+chr1	2000600	2000620	0.000381		unknown	ENST00000682832.2:CFAP74:unknown:21	CFAP74:unknown
+chr14	21426165	21426427	0.373	0.00141	unknown	ENST00000646647.2:CHD8:unknown:263	CHD8:unknown
+chr16	30108313	30108420	0.215	1.97e-05	unknown	ENST00000406256.8:GDPD3:unknown:108	GDPD3:unknown
