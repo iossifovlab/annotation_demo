@@ -63,8 +63,6 @@ annotators:
 
 - liftover_annotator:
     chain: liftover/hg38ToHg19
-    # source_genome: hg38/genomes/GRCh38-hg38
-    # target_genome: hg19/genomes/GATK_ResourceBundle_5777_b37_phiX174
     attributes:
     - source: liftover_annotatable
       name: hg19_annotatable
@@ -73,7 +71,3 @@ annotators:
 - position_score:
     resource_id: hg19/scores/fitCons2/FitCons2_E06*
     input_annotatable: hg19_annotatable 
-
-
-
-
