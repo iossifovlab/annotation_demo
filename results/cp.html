@@ -1,0 +1,1371 @@
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    <style>
+      * {
+        font-family: Roboto, FontAwesome;
+      }
+
+      p {
+        margin: 8px;
+      }
+
+      body {
+        width: 70%;
+        margin: auto;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4 {
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+        font-size: 24px;
+      }
+
+      .preamble-header,
+      .annotator-list-header,
+      .pipeline-header {
+        margin-top: 40px;
+        margin-bottom: 20px;
+      }
+
+      .preamble-header,
+      .annotator-list-header {
+        font-size: 30px;
+      }
+
+      .pipeline-header {
+        font-size: 36px;
+      }
+
+      table {
+        border-collapse: collapse;
+      }
+
+      th, td {
+        padding: 10px;
+      }
+
+      th {
+        font-size: 20px;
+      }
+
+      td {
+        font-size: 18px;
+      }
+
+      .annotator-doc {
+        display: flex;
+        flex-direction: row;
+        border: 1px solid rgb(218,218,218);
+      }
+
+      .annotator-line {
+        font-size: 18px;
+        vertical-align: top;
+        width: 40%;
+        position: -webkit-sticky;
+        align-self: flex-start;
+        word-break: break-word;
+      }
+
+      .sticky-line {
+        position: sticky;
+        top: 0px;
+      }
+
+      .annotator {
+        background-color: #eee;
+        padding: 10px 8px;
+      }
+
+      .annotator-title {
+        font-size: 24px;
+        font-weight: 500;
+      }
+
+      .attribute-list {
+        width: 60%;
+        border-right: 1px solid rgb(218,218,218);
+      }
+      
+      .attribute {
+        padding: 0 0 20px;
+        border-bottom: 1px solid rgb(218,218,218);
+      }
+
+      .attribute:last-child {
+        border-bottom: none;
+      }
+
+      .attribute-name {
+        font-size: 22px;
+        font-weight: 500;
+        padding: 10px 8px;
+        word-break: break-word;
+      }
+
+      .resource-id {
+        font-size: 18px;
+        margin: 8px;
+      }
+
+      .attribute-type {
+        font-size: 18px;
+        padding: 10px 8px;
+      }
+
+      .attribute-description {
+        font-size: 18px;
+        margin-right: 20px;
+      }
+
+      .attribute-info {
+        font-size: 24px;
+        align-self: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        background-color: #f7f7f7;
+        margin-bottom: 12px;
+      }
+
+      .attribute-internal {
+        background-color: #f7efe4;
+      }
+
+      .attribute-source, .pipeline_path {
+        color: rgb(145,145,145);
+        margin: 8px;
+      }
+
+      .pipeline_path {
+        float: right;
+        font-size: 18px;
+      }
+
+      .no-description {
+        font-style: italic;
+        color: #9c9c9c;
+        padding: 10px 8px;
+      }
+
+      .resource-info {
+        font-style: italic;
+        padding: 10px 0 0 0;
+      }
+
+      .resource {
+        padding: 10px 8px;
+      }
+
+      summary {
+        padding-top: 10px; 
+      }
+
+      img {
+        height: auto; 
+        width: auto; 
+        max-width: 95%; 
+        max-height: 95%;
+      }
+
+      table, th, td {
+        border:1px solid rgb(218,218,218);
+      }
+
+      th {
+        background-color: #eee;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1 class="pipeline-header">Pipeline Documentation</h1>
+    
+      <h2 class="preamble-header">preamble</h2>
+      <table style="width: 100%">
+      
+        <tr>
+          <th>Summary</th>
+          <td>Demo pipeline.</td>
+        </tr>
+      
+      
+        <tr>
+          <th>Description</th>
+          <td>Demonstrates some of the features of pipelines.</td>
+        </tr>
+      
+      
+        <tr>
+          <th>Input reference genome</th>
+          <td>
+            <a href="https://grr.iossifovlab.com/hg38/genomes/GRCh38-hg38/index.html">
+              hg38/genomes/GRCh38-hg38
+            </a>
+          </td>
+        </tr>
+      
+      
+      </table>
+    
+
+    
+    <div class="pipeline_path">
+      Pipeline path: complex_pipeline.yaml
+    </div>
+    
+
+    <h2 class="annotator-list-header">Annotators</h2>
+    
+      <div class="annotator-doc">
+        <div class="attribute-list">
+          
+            <div class="attribute">
+              <div class="attribute-info ">
+                <div class="attribute-name">
+                  CLNSIG
+                </div>
+                <div class="attribute-type">Type: str </div>
+              </div>
+              <div class="attribute-description">
+                <p>Aggregate germline classification for this single variant; multiple values are separated by a vertical bar</p>
+
+<p><strong>position_aggregator</strong>: <code>concatenate</code> [default]</p>
+
+<p><strong>allele_aggregator</strong>: <code>concatenate</code> [default]</p>
+
+                
+                  <img src="https://grr.iossifovlab.com/hg38/scores/ClinVar_20240730/statistics/histogram_CLNSIG.png" alt="HISTOGRAM">
+                
+                <div class="attribute-source">source: CLNSIG</div>
+              </div>
+            </div>
+          
+            <div class="attribute">
+              <div class="attribute-info ">
+                <div class="attribute-name">
+                  CLNDN
+                </div>
+                <div class="attribute-type">Type: str </div>
+              </div>
+              <div class="attribute-description">
+                <p>ClinVar's preferred disease name for the concept specified by disease identifiers in CLNDISDB</p>
+
+<p><strong>position_aggregator</strong>: <code>concatenate</code> [default]</p>
+
+<p><strong>allele_aggregator</strong>: <code>concatenate</code> [default]</p>
+
+                
+                  <img src="https://grr.iossifovlab.com/hg38/scores/ClinVar_20240730/statistics/histogram_CLNDN.png" alt="HISTOGRAM">
+                
+                <div class="attribute-source">source: CLNDN</div>
+              </div>
+            </div>
+          
+        </div>
+
+        <div class="annotator-line sticky-line">
+          <div class="annotator">
+            <div class="annotator-title">Annotator type: allele_score</div>
+          </div>
+
+          
+            <div class="annotator-description">
+              <p>Annotator to use with scores that depend on allele like
+variant frequencies, etc.</p>
+
+<p><a href="https://www.iossifovlab.com/gpfuserdocs/administration/annotation.html#allele-score" target="_blank">More info</a></p>
+
+            </div>
+          
+
+          
+            <div class="resource">
+              <div><b>Resource</b></div>
+              <div class="resource-info">Id: <a href="https://grr.iossifovlab.com/hg38/scores/ClinVar_20240730/index.html">
+                      hg38/scores/ClinVar_20240730</a></div>
+              <div class="resource-info">Type: allele_score</div>
+              
+                <div class="resource-info">Summary:</div>
+                <div>
+                  Measure used to assess the clinical significance of genetic variants
+
+                </div>
+              
+            </div>
+          
+        </div>
+      </div>
+    
+      <div class="annotator-doc">
+        <div class="attribute-list">
+          
+            <div class="attribute">
+              <div class="attribute-info ">
+                <div class="attribute-name">
+                  MVP_rankscore
+                </div>
+                <div class="attribute-type">Type: float </div>
+              </div>
+              <div class="attribute-description">
+                <p>MVP scores were ranked among all MVP scores in dbNSFP. The rankscore is the ratio of the rank of the score over the total number of MVP scores in dbNSFP.</p>
+
+<p><strong>position_aggregator</strong>: <code>mean</code> [default]</p>
+
+<p><strong>nucleotide_aggregator</strong>: <code>max</code> [default]</p>
+
+                
+                  <img src="https://grr.iossifovlab.com/hg38/scores/dbNSFP4.9a/statistics/histogram_MVP_rankscore.png" alt="HISTOGRAM">
+                
+                <div class="attribute-source">source: MVP_rankscore</div>
+              </div>
+            </div>
+          
+            <div class="attribute">
+              <div class="attribute-info ">
+                <div class="attribute-name">
+                  REVEL_rankscore
+                </div>
+                <div class="attribute-type">Type: float </div>
+              </div>
+              <div class="attribute-description">
+                <p>REVEL scores were ranked among all REVEL scores in dbNSFP. The rankscore is the ratio of the rank of the score over the total number of REVEL scores in dbNSFP.</p>
+
+<p><strong>position_aggregator</strong>: <code>mean</code> [default]</p>
+
+<p><strong>nucleotide_aggregator</strong>: <code>max</code> [default]</p>
+
+                
+                  <img src="https://grr.iossifovlab.com/hg38/scores/dbNSFP4.9a/statistics/histogram_REVEL_rankscore.png" alt="HISTOGRAM">
+                
+                <div class="attribute-source">source: REVEL_rankscore</div>
+              </div>
+            </div>
+          
+            <div class="attribute">
+              <div class="attribute-info ">
+                <div class="attribute-name">
+                  MutationTaster_converted_rankscore
+                </div>
+                <div class="attribute-type">Type: float </div>
+              </div>
+              <div class="attribute-description">
+                <p>The MTori scores were first converted. If the prediction is "A" or "D" MTnew=MTori; if the prediction is "N" or "P", MTnew=1-MTori. Then MTnew scores were ranked among all MTnew scores in dbNSFP. If there are multiple scores of a SNV, only the largest MTnew was used in ranking. The rankscore is the ratio of the rank of the score over the total number of MTnew scores in dbNSFP. The scores range from 0.08979 to 0.81001.</p>
+
+<p><strong>position_aggregator</strong>: <code>mean</code> [default]</p>
+
+<p><strong>nucleotide_aggregator</strong>: <code>max</code> [default]</p>
+
+                
+                  <img src="https://grr.iossifovlab.com/hg38/scores/dbNSFP4.9a/statistics/histogram_MutationTaster_converted_rankscore.png" alt="HISTOGRAM">
+                
+                <div class="attribute-source">source: MutationTaster_converted_rankscore</div>
+              </div>
+            </div>
+          
+        </div>
+
+        <div class="annotator-line sticky-line">
+          <div class="annotator">
+            <div class="annotator-title">Annotator type: np_score</div>
+          </div>
+
+          
+            <div class="annotator-description">
+              <p>Annotator to use with genomic scores depending on genomic position and
+nucleotide change like CADD, MPC, etc.</p>
+
+<p><a href="https://www.iossifovlab.com/gpfuserdocs/administration/annotation.html#np-score" target="_blank">More info</a></p>
+
+            </div>
+          
+
+          
+            <div class="resource">
+              <div><b>Resource</b></div>
+              <div class="resource-info">Id: <a href="https://grr.iossifovlab.com/hg38/scores/dbNSFP4.9a/index.html">
+                      hg38/scores/dbNSFP4.9a</a></div>
+              <div class="resource-info">Type: np_score</div>
+              
+                <div class="resource-info">Summary:</div>
+                <div>
+                  dbNSFPv4.9a
+                </div>
+              
+            </div>
+          
+        </div>
+      </div>
+    
+      <div class="annotator-doc">
+        <div class="attribute-list">
+          
+            <div class="attribute">
+              <div class="attribute-info attribute-internal">
+                <div class="attribute-name">
+                  normalized_allele
+                </div>
+                <div class="attribute-type">Type: annotatable (Internal)</div>
+              </div>
+              <div class="attribute-description">
+                <p>Normalized allele.</p>
+
+                
+                <div class="attribute-source">source: normalized_allele</div>
+              </div>
+            </div>
+          
+        </div>
+
+        <div class="annotator-line ">
+          <div class="annotator">
+            <div class="annotator-title">Annotator type: normalize_allele_annotator</div>
+          </div>
+
+          
+            <div class="no-description">
+              No description
+            </div>
+          
+
+          
+            <div class="resource">
+              <div><b>Resource</b></div>
+              <div class="resource-info">Id: <a href="https://grr.iossifovlab.com/hg38/genomes/GRCh38-hg38/index.html">
+                      hg38/genomes/GRCh38-hg38</a></div>
+              <div class="resource-info">Type: genome</div>
+              
+                <div class="resource-info">Summary:</div>
+                <div>
+                  HG38 reference genome
+
+                </div>
+              
+            </div>
+          
+        </div>
+      </div>
+    
+      <div class="annotator-doc">
+        <div class="attribute-list">
+          
+            <div class="attribute">
+              <div class="attribute-info ">
+                <div class="attribute-name">
+                  gnomAD_4.1_af
+                </div>
+                <div class="attribute-type">Type: float </div>
+              </div>
+              <div class="attribute-description">
+                <p>Alternate allele frequency as percent</p>
+
+<p><strong>position_aggregator</strong>: <code>mean</code> [default]</p>
+
+<p><strong>allele_aggregator</strong>: <code>max</code> [default]</p>
+
+                
+                  <img src="https://grr.iossifovlab.com/hg38/variant_frequencies/gnomAD_4.1.0/exomes/ALL/statistics/histogram_AF_percent.png" alt="HISTOGRAM">
+                
+                <div class="attribute-source">source: AF_percent</div>
+              </div>
+            </div>
+          
+        </div>
+
+        <div class="annotator-line ">
+          <div class="annotator">
+            <div class="annotator-title">Annotator type: allele_score</div>
+          </div>
+
+          
+            <div class="annotator-description">
+              <p>Annotator to use with scores that depend on allele like
+variant frequencies, etc.</p>
+
+<p><a href="https://www.iossifovlab.com/gpfuserdocs/administration/annotation.html#allele-score" target="_blank">More info</a></p>
+
+<ul>
+<li><strong>input_annotatable</strong>: <code>normalized_allele</code></li>
+</ul>
+
+            </div>
+          
+
+          
+            <div class="resource">
+              <div><b>Resource</b></div>
+              <div class="resource-info">Id: <a href="https://grr.iossifovlab.com/hg38/variant_frequencies/gnomAD_4.1.0/exomes/ALL/index.html">
+                      hg38/variant_frequencies/gnomAD_4.1.0/exomes/ALL</a></div>
+              <div class="resource-info">Type: allele_score</div>
+              
+                <div class="resource-info">Summary:</div>
+                <div>
+                  gnomAD v4.1.0 exome variants (ALL)
+
+                </div>
+              
+            </div>
+          
+        </div>
+      </div>
+    
+      <div class="annotator-doc">
+        <div class="attribute-list">
+          
+            <div class="attribute">
+              <div class="attribute-info ">
+                <div class="attribute-name">
+                  worst_effect
+                </div>
+                <div class="attribute-type">Type: str </div>
+              </div>
+              <div class="attribute-description">
+                <p>Worst effect accross all transcripts.</p>
+
+                
+                <div class="attribute-source">source: worst_effect</div>
+              </div>
+            </div>
+          
+            <div class="attribute">
+              <div class="attribute-info ">
+                <div class="attribute-name">
+                  mane_effect_details
+                </div>
+                <div class="attribute-type">Type: str </div>
+              </div>
+              <div class="attribute-description">
+                <p>Effect details for each affected transcript. Format: <code>&lt; transcript 1 &gt;:&lt;gene 1&gt;:&lt;effect 1&gt;:&lt;details 1&gt;|...</code></p>
+
+                
+                <div class="attribute-source">source: effect_details</div>
+              </div>
+            </div>
+          
+        </div>
+
+        <div class="annotator-line sticky-line">
+          <div class="annotator">
+            <div class="annotator-title">Annotator type: effect_annotator</div>
+          </div>
+
+          
+            <div class="annotator-description">
+              <p>Annotator to identify the effect of the variant on protein coding.</p>
+
+<p><a href="https://iossifovlab.com/gpfuserdocs/administration/annotation.html#effect-annotator" target="_blank">More info</a></p>
+
+            </div>
+          
+
+          
+            <div class="resource">
+              <div><b>Resource</b></div>
+              <div class="resource-info">Id: <a href="https://grr.iossifovlab.com/hg38/genomes/GRCh38-hg38/index.html">
+                      hg38/genomes/GRCh38-hg38</a></div>
+              <div class="resource-info">Type: genome</div>
+              
+                <div class="resource-info">Summary:</div>
+                <div>
+                  HG38 reference genome
+
+                </div>
+              
+            </div>
+          
+            <div class="resource">
+              <div><b>Resource</b></div>
+              <div class="resource-info">Id: <a href="https://grr.iossifovlab.com/hg38/gene_models/MANE/1.3/index.html">
+                      hg38/gene_models/MANE/1.3</a></div>
+              <div class="resource-info">Type: gene_models</div>
+              
+                <div class="resource-info">Summary:</div>
+                <div>
+                  MANE gene model version 1.3
+
+                </div>
+              
+            </div>
+          
+        </div>
+      </div>
+    
+      <div class="annotator-doc">
+        <div class="attribute-list">
+          
+            <div class="attribute">
+              <div class="attribute-info ">
+                <div class="attribute-name">
+                  genecode_worst_effect
+                </div>
+                <div class="attribute-type">Type: str </div>
+              </div>
+              <div class="attribute-description">
+                <p>Worst effect accross all transcripts.</p>
+
+                
+                <div class="attribute-source">source: worst_effect</div>
+              </div>
+            </div>
+          
+            <div class="attribute">
+              <div class="attribute-info attribute-internal">
+                <div class="attribute-name">
+                  gene_list
+                </div>
+                <div class="attribute-type">Type: object (Internal)</div>
+              </div>
+              <div class="attribute-description">
+                <p>List of all genes</p>
+
+                
+                <div class="attribute-source">source: gene_list</div>
+              </div>
+            </div>
+          
+        </div>
+
+        <div class="annotator-line sticky-line">
+          <div class="annotator">
+            <div class="annotator-title">Annotator type: effect_annotator</div>
+          </div>
+
+          
+            <div class="annotator-description">
+              <p>Annotator to identify the effect of the variant on protein coding.</p>
+
+<p><a href="https://iossifovlab.com/gpfuserdocs/administration/annotation.html#effect-annotator" target="_blank">More info</a></p>
+
+            </div>
+          
+
+          
+            <div class="resource">
+              <div><b>Resource</b></div>
+              <div class="resource-info">Id: <a href="https://grr.iossifovlab.com/hg38/genomes/GRCh38.p14/index.html">
+                      hg38/genomes/GRCh38.p14</a></div>
+              <div class="resource-info">Type: genome</div>
+              
+                <div class="resource-info">Summary:</div>
+                <div>
+                  Nucleotide sequence of the GRCh38.p14 genome assembly
+
+                </div>
+              
+            </div>
+          
+            <div class="resource">
+              <div><b>Resource</b></div>
+              <div class="resource-info">Id: <a href="https://grr.iossifovlab.com/hg38/gene_models/GENCODE/46/basic/PRI/index.html">
+                      hg38/gene_models/GENCODE/46/basic/PRI</a></div>
+              <div class="resource-info">Type: gene_models</div>
+              
+                <div class="resource-info">Summary:</div>
+                <div>
+                  GENCODE 46, basic gene annotation on the primary assembly (chromosomes and scaffolds) sequence regions
+
+                </div>
+              
+            </div>
+          
+        </div>
+      </div>
+    
+      <div class="annotator-doc">
+        <div class="attribute-list">
+          
+            <div class="attribute">
+              <div class="attribute-info ">
+                <div class="attribute-name">
+                  pLI_rank_all
+                </div>
+                <div class="attribute-type">Type: float </div>
+              </div>
+              <div class="attribute-description">
+                <p>Gene rank after sorting by pLI intolerance score</p>
+
+<p><strong>gene_aggregator</strong>: dict [default]</p>
+
+                
+                  <img src="https://grr.iossifovlab.com/gene_properties/gene_scores/pLI/statistics/histogram_pLI_rank.png" alt="HISTOGRAM">
+                
+                <div class="attribute-source">source: pLI_rank</div>
+              </div>
+            </div>
+          
+            <div class="attribute">
+              <div class="attribute-info ">
+                <div class="attribute-name">
+                  pLI_rank_min
+                </div>
+                <div class="attribute-type">Type: float </div>
+              </div>
+              <div class="attribute-description">
+                <p>Gene rank after sorting by pLI intolerance score</p>
+
+<p><strong>gene_aggregator</strong>: min</p>
+
+                
+                  <img src="https://grr.iossifovlab.com/gene_properties/gene_scores/pLI/statistics/histogram_pLI_rank.png" alt="HISTOGRAM">
+                
+                <div class="attribute-source">source: pLI_rank</div>
+              </div>
+            </div>
+          
+        </div>
+
+        <div class="annotator-line sticky-line">
+          <div class="annotator">
+            <div class="annotator-title">Annotator type: gene_score_annotator</div>
+          </div>
+
+          
+            <div class="no-description">
+              No description
+            </div>
+          
+
+          
+            <div class="resource">
+              <div><b>Resource</b></div>
+              <div class="resource-info">Id: <a href="https://grr.iossifovlab.com/gene_properties/gene_scores/pLI/index.html">
+                      gene_properties/gene_scores/pLI</a></div>
+              <div class="resource-info">Type: gene_score</div>
+              
+                <div class="resource-info">Summary:</div>
+                <div>
+                  Probability of Loss-of-Function Intolerance
+
+                </div>
+              
+            </div>
+          
+        </div>
+      </div>
+    
+      <div class="annotator-doc">
+        <div class="attribute-list">
+          
+            <div class="attribute">
+              <div class="attribute-info ">
+                <div class="attribute-name">
+                  Satterstrom Buxbaum Cell 2020 top
+                </div>
+                <div class="attribute-type">Type: bool </div>
+              </div>
+              <div class="attribute-description">
+                <p>List of genes (unique) from paper Satterstrom<em>Buxbaum</em>Cell_2020, Supplementary mmc2 Excel file, Sheet: 102 ASD</p>
+
+                
+                <div class="attribute-source">source: Satterstrom Buxbaum Cell 2020 top</div>
+              </div>
+            </div>
+          
+        </div>
+
+        <div class="annotator-line ">
+          <div class="annotator">
+            <div class="annotator-title">Annotator type: gene_set_annotator</div>
+          </div>
+
+          
+            <div class="annotator-description">
+              <p>This annotator uses the<strong>autism</strong></p>
+
+            </div>
+          
+
+          
+            <div class="resource">
+              <div><b>Resource</b></div>
+              <div class="resource-info">Id: <a href="https://grr.iossifovlab.com/gene_properties/gene_sets/autism/index.html">
+                      gene_properties/gene_sets/autism</a></div>
+              <div class="resource-info">Type: gene_set</div>
+              
+                <div class="resource-info">Summary:</div>
+                <div>
+                  Autism gene sets derived from publications
+                </div>
+              
+            </div>
+          
+        </div>
+      </div>
+    
+      <div class="annotator-doc">
+        <div class="attribute-list">
+          
+            <div class="attribute">
+              <div class="attribute-info attribute-internal">
+                <div class="attribute-name">
+                  hg19_annotatable
+                </div>
+                <div class="attribute-type">Type: annotatable (Internal)</div>
+              </div>
+              <div class="attribute-description">
+                <p>Lifted over allele.</p>
+
+                
+                <div class="attribute-source">source: liftover_annotatable</div>
+              </div>
+            </div>
+          
+        </div>
+
+        <div class="annotator-line ">
+          <div class="annotator">
+            <div class="annotator-title">Annotator type: liftover_annotator</div>
+          </div>
+
+          
+            <div class="annotator-description">
+              <p>Annotator to lift over a variant from one reference genome to another.</p>
+
+<p><a href="https://iossifovlab.com/gpfuserdocs/administration/annotation.html#liftover-annotator" target="_blank">More info</a></p>
+
+            </div>
+          
+
+          
+            <div class="resource">
+              <div><b>Resource</b></div>
+              <div class="resource-info">Id: <a href="https://grr.iossifovlab.com/liftover/hg38ToHg19/index.html">
+                      liftover/hg38ToHg19</a></div>
+              <div class="resource-info">Type: liftover_chain</div>
+              
+                <div class="resource-info">Summary:</div>
+                <div>
+                  Liftover Chain Hg38 to Hg19
+
+                </div>
+              
+            </div>
+          
+            <div class="resource">
+              <div><b>Resource</b></div>
+              <div class="resource-info">Id: <a href="https://grr.iossifovlab.com/hg38/genomes/GRCh38-hg38/index.html">
+                      hg38/genomes/GRCh38-hg38</a></div>
+              <div class="resource-info">Type: genome</div>
+              
+                <div class="resource-info">Summary:</div>
+                <div>
+                  HG38 reference genome
+
+                </div>
+              
+            </div>
+          
+            <div class="resource">
+              <div><b>Resource</b></div>
+              <div class="resource-info">Id: <a href="https://grr.iossifovlab.com/hg19/genomes/GATK_ResourceBundle_5777_b37_phiX174/index.html">
+                      hg19/genomes/GATK_ResourceBundle_5777_b37_phiX174</a></div>
+              <div class="resource-info">Type: genome</div>
+              
+                <div class="resource-info">Summary:</div>
+                <div>
+                  HG19 reference genome
+
+                </div>
+              
+            </div>
+          
+        </div>
+      </div>
+    
+      <div class="annotator-doc">
+        <div class="attribute-list">
+          
+            <div class="attribute">
+              <div class="attribute-info ">
+                <div class="attribute-name">
+                  FitCons2_E061
+                </div>
+                <div class="attribute-type">Type: float </div>
+              </div>
+              <div class="attribute-description">
+                <p>Foreskin Melanocyte Primary Cells skin03 Score (E061)</p>
+
+<p><strong>position_aggregator</strong>: <code>mean</code> [default]</p>
+
+                
+                  <img src="https://grr.iossifovlab.com/hg19/scores/fitCons2/FitCons2_E061/statistics/histogram_FitCons2_E061.png" alt="HISTOGRAM">
+                
+                <div class="attribute-source">source: FitCons2_E061</div>
+              </div>
+            </div>
+          
+        </div>
+
+        <div class="annotator-line ">
+          <div class="annotator">
+            <div class="annotator-title">Annotator type: position_score</div>
+          </div>
+
+          
+            <div class="annotator-description">
+              <p>Annotator to use with genomic scores depending on genomic position like
+phastCons, phyloP, FitCons2, etc.</p>
+
+<p><a href="https://www.iossifovlab.com/gpfuserdocs/administration/annotation.html#position-score" target="_blank">More info</a></p>
+
+<ul>
+<li><strong>input_annotatable</strong>: <code>hg19_annotatable</code></li>
+</ul>
+
+            </div>
+          
+
+          
+            <div class="resource">
+              <div><b>Resource</b></div>
+              <div class="resource-info">Id: <a href="https://grr.iossifovlab.com/hg19/scores/fitCons2/FitCons2_E061/index.html">
+                      hg19/scores/fitCons2/FitCons2_E061</a></div>
+              <div class="resource-info">Type: position_score</div>
+              
+                <div class="resource-info">Summary:</div>
+                <div>
+                  Cell-type specific FitCons scores for Foreskin Melanocyte Primary Cells skin03 (E061)
+
+                </div>
+              
+            </div>
+          
+        </div>
+      </div>
+    
+      <div class="annotator-doc">
+        <div class="attribute-list">
+          
+            <div class="attribute">
+              <div class="attribute-info ">
+                <div class="attribute-name">
+                  FitCons2_E062
+                </div>
+                <div class="attribute-type">Type: float </div>
+              </div>
+              <div class="attribute-description">
+                <p>Primary mononuclear cells from peripheral blood Score (E062)</p>
+
+<p><strong>position_aggregator</strong>: <code>mean</code> [default]</p>
+
+                
+                  <img src="https://grr.iossifovlab.com/hg19/scores/fitCons2/FitCons2_E062/statistics/histogram_FitCons2_E062.png" alt="HISTOGRAM">
+                
+                <div class="attribute-source">source: FitCons2_E062</div>
+              </div>
+            </div>
+          
+        </div>
+
+        <div class="annotator-line ">
+          <div class="annotator">
+            <div class="annotator-title">Annotator type: position_score</div>
+          </div>
+
+          
+            <div class="annotator-description">
+              <p>Annotator to use with genomic scores depending on genomic position like
+phastCons, phyloP, FitCons2, etc.</p>
+
+<p><a href="https://www.iossifovlab.com/gpfuserdocs/administration/annotation.html#position-score" target="_blank">More info</a></p>
+
+<ul>
+<li><strong>input_annotatable</strong>: <code>hg19_annotatable</code></li>
+</ul>
+
+            </div>
+          
+
+          
+            <div class="resource">
+              <div><b>Resource</b></div>
+              <div class="resource-info">Id: <a href="https://grr.iossifovlab.com/hg19/scores/fitCons2/FitCons2_E062/index.html">
+                      hg19/scores/fitCons2/FitCons2_E062</a></div>
+              <div class="resource-info">Type: position_score</div>
+              
+                <div class="resource-info">Summary:</div>
+                <div>
+                  Cell-type specific FitCons scores for Primary mononuclear cells from peripheral blood (E062)
+
+                </div>
+              
+            </div>
+          
+        </div>
+      </div>
+    
+      <div class="annotator-doc">
+        <div class="attribute-list">
+          
+            <div class="attribute">
+              <div class="attribute-info ">
+                <div class="attribute-name">
+                  FitCons2_E063
+                </div>
+                <div class="attribute-type">Type: float </div>
+              </div>
+              <div class="attribute-description">
+                <p>Adipose Nuclei Score (E063)</p>
+
+<p><strong>position_aggregator</strong>: <code>mean</code> [default]</p>
+
+                
+                  <img src="https://grr.iossifovlab.com/hg19/scores/fitCons2/FitCons2_E063/statistics/histogram_FitCons2_E063.png" alt="HISTOGRAM">
+                
+                <div class="attribute-source">source: FitCons2_E063</div>
+              </div>
+            </div>
+          
+        </div>
+
+        <div class="annotator-line ">
+          <div class="annotator">
+            <div class="annotator-title">Annotator type: position_score</div>
+          </div>
+
+          
+            <div class="annotator-description">
+              <p>Annotator to use with genomic scores depending on genomic position like
+phastCons, phyloP, FitCons2, etc.</p>
+
+<p><a href="https://www.iossifovlab.com/gpfuserdocs/administration/annotation.html#position-score" target="_blank">More info</a></p>
+
+<ul>
+<li><strong>input_annotatable</strong>: <code>hg19_annotatable</code></li>
+</ul>
+
+            </div>
+          
+
+          
+            <div class="resource">
+              <div><b>Resource</b></div>
+              <div class="resource-info">Id: <a href="https://grr.iossifovlab.com/hg19/scores/fitCons2/FitCons2_E063/index.html">
+                      hg19/scores/fitCons2/FitCons2_E063</a></div>
+              <div class="resource-info">Type: position_score</div>
+              
+                <div class="resource-info">Summary:</div>
+                <div>
+                  Cell-type specific FitCons scores for Adipose Nuclei (E063)
+
+                </div>
+              
+            </div>
+          
+        </div>
+      </div>
+    
+      <div class="annotator-doc">
+        <div class="attribute-list">
+          
+            <div class="attribute">
+              <div class="attribute-info ">
+                <div class="attribute-name">
+                  FitCons2_E065
+                </div>
+                <div class="attribute-type">Type: float </div>
+              </div>
+              <div class="attribute-description">
+                <p>Aorta Score (E065)</p>
+
+<p><strong>position_aggregator</strong>: <code>mean</code> [default]</p>
+
+                
+                  <img src="https://grr.iossifovlab.com/hg19/scores/fitCons2/FitCons2_E065/statistics/histogram_FitCons2_E065.png" alt="HISTOGRAM">
+                
+                <div class="attribute-source">source: FitCons2_E065</div>
+              </div>
+            </div>
+          
+        </div>
+
+        <div class="annotator-line ">
+          <div class="annotator">
+            <div class="annotator-title">Annotator type: position_score</div>
+          </div>
+
+          
+            <div class="annotator-description">
+              <p>Annotator to use with genomic scores depending on genomic position like
+phastCons, phyloP, FitCons2, etc.</p>
+
+<p><a href="https://www.iossifovlab.com/gpfuserdocs/administration/annotation.html#position-score" target="_blank">More info</a></p>
+
+<ul>
+<li><strong>input_annotatable</strong>: <code>hg19_annotatable</code></li>
+</ul>
+
+            </div>
+          
+
+          
+            <div class="resource">
+              <div><b>Resource</b></div>
+              <div class="resource-info">Id: <a href="https://grr.iossifovlab.com/hg19/scores/fitCons2/FitCons2_E065/index.html">
+                      hg19/scores/fitCons2/FitCons2_E065</a></div>
+              <div class="resource-info">Type: position_score</div>
+              
+                <div class="resource-info">Summary:</div>
+                <div>
+                  Cell-type specific FitCons scores for Aorta (E065)
+
+                </div>
+              
+            </div>
+          
+        </div>
+      </div>
+    
+      <div class="annotator-doc">
+        <div class="attribute-list">
+          
+            <div class="attribute">
+              <div class="attribute-info ">
+                <div class="attribute-name">
+                  FitCons2_E066
+                </div>
+                <div class="attribute-type">Type: float </div>
+              </div>
+              <div class="attribute-description">
+                <p>Liver Score (E066)</p>
+
+<p><strong>position_aggregator</strong>: <code>mean</code> [default]</p>
+
+                
+                  <img src="https://grr.iossifovlab.com/hg19/scores/fitCons2/FitCons2_E066/statistics/histogram_FitCons2_E066.png" alt="HISTOGRAM">
+                
+                <div class="attribute-source">source: FitCons2_E066</div>
+              </div>
+            </div>
+          
+        </div>
+
+        <div class="annotator-line ">
+          <div class="annotator">
+            <div class="annotator-title">Annotator type: position_score</div>
+          </div>
+
+          
+            <div class="annotator-description">
+              <p>Annotator to use with genomic scores depending on genomic position like
+phastCons, phyloP, FitCons2, etc.</p>
+
+<p><a href="https://www.iossifovlab.com/gpfuserdocs/administration/annotation.html#position-score" target="_blank">More info</a></p>
+
+<ul>
+<li><strong>input_annotatable</strong>: <code>hg19_annotatable</code></li>
+</ul>
+
+            </div>
+          
+
+          
+            <div class="resource">
+              <div><b>Resource</b></div>
+              <div class="resource-info">Id: <a href="https://grr.iossifovlab.com/hg19/scores/fitCons2/FitCons2_E066/index.html">
+                      hg19/scores/fitCons2/FitCons2_E066</a></div>
+              <div class="resource-info">Type: position_score</div>
+              
+                <div class="resource-info">Summary:</div>
+                <div>
+                  Cell-type specific FitCons scores for Liver (E066)
+
+                </div>
+              
+            </div>
+          
+        </div>
+      </div>
+    
+      <div class="annotator-doc">
+        <div class="attribute-list">
+          
+            <div class="attribute">
+              <div class="attribute-info ">
+                <div class="attribute-name">
+                  FitCons2_E067
+                </div>
+                <div class="attribute-type">Type: float </div>
+              </div>
+              <div class="attribute-description">
+                <p>Brain Angular Gyrus Score (E067)</p>
+
+<p><strong>position_aggregator</strong>: <code>mean</code> [default]</p>
+
+                
+                  <img src="https://grr.iossifovlab.com/hg19/scores/fitCons2/FitCons2_E067/statistics/histogram_FitCons2_E067.png" alt="HISTOGRAM">
+                
+                <div class="attribute-source">source: FitCons2_E067</div>
+              </div>
+            </div>
+          
+        </div>
+
+        <div class="annotator-line ">
+          <div class="annotator">
+            <div class="annotator-title">Annotator type: position_score</div>
+          </div>
+
+          
+            <div class="annotator-description">
+              <p>Annotator to use with genomic scores depending on genomic position like
+phastCons, phyloP, FitCons2, etc.</p>
+
+<p><a href="https://www.iossifovlab.com/gpfuserdocs/administration/annotation.html#position-score" target="_blank">More info</a></p>
+
+<ul>
+<li><strong>input_annotatable</strong>: <code>hg19_annotatable</code></li>
+</ul>
+
+            </div>
+          
+
+          
+            <div class="resource">
+              <div><b>Resource</b></div>
+              <div class="resource-info">Id: <a href="https://grr.iossifovlab.com/hg19/scores/fitCons2/FitCons2_E067/index.html">
+                      hg19/scores/fitCons2/FitCons2_E067</a></div>
+              <div class="resource-info">Type: position_score</div>
+              
+                <div class="resource-info">Summary:</div>
+                <div>
+                  Cell-type specific FitCons scores for Brain Angular Gyrus (E067)
+
+                </div>
+              
+            </div>
+          
+        </div>
+      </div>
+    
+      <div class="annotator-doc">
+        <div class="attribute-list">
+          
+            <div class="attribute">
+              <div class="attribute-info ">
+                <div class="attribute-name">
+                  FitCons2_E068
+                </div>
+                <div class="attribute-type">Type: float </div>
+              </div>
+              <div class="attribute-description">
+                <p>E68 Brain Anterior Caudate Score (E068)</p>
+
+<p><strong>position_aggregator</strong>: <code>mean</code> [default]</p>
+
+                
+                  <img src="https://grr.iossifovlab.com/hg19/scores/fitCons2/FitCons2_E068/statistics/histogram_FitCons2_E068.png" alt="HISTOGRAM">
+                
+                <div class="attribute-source">source: FitCons2_E068</div>
+              </div>
+            </div>
+          
+        </div>
+
+        <div class="annotator-line ">
+          <div class="annotator">
+            <div class="annotator-title">Annotator type: position_score</div>
+          </div>
+
+          
+            <div class="annotator-description">
+              <p>Annotator to use with genomic scores depending on genomic position like
+phastCons, phyloP, FitCons2, etc.</p>
+
+<p><a href="https://www.iossifovlab.com/gpfuserdocs/administration/annotation.html#position-score" target="_blank">More info</a></p>
+
+<ul>
+<li><strong>input_annotatable</strong>: <code>hg19_annotatable</code></li>
+</ul>
+
+            </div>
+          
+
+          
+            <div class="resource">
+              <div><b>Resource</b></div>
+              <div class="resource-info">Id: <a href="https://grr.iossifovlab.com/hg19/scores/fitCons2/FitCons2_E068/index.html">
+                      hg19/scores/fitCons2/FitCons2_E068</a></div>
+              <div class="resource-info">Type: position_score</div>
+              
+                <div class="resource-info">Summary:</div>
+                <div>
+                  Cell-type specific FitCons scores for E68 Brain Anterior Caudate (E068)
+
+                </div>
+              
+            </div>
+          
+        </div>
+      </div>
+    
+      <div class="annotator-doc">
+        <div class="attribute-list">
+          
+            <div class="attribute">
+              <div class="attribute-info ">
+                <div class="attribute-name">
+                  FitCons2_E069
+                </div>
+                <div class="attribute-type">Type: float </div>
+              </div>
+              <div class="attribute-description">
+                <p>Brain Cingulate Gyrus Score (E069)</p>
+
+<p><strong>position_aggregator</strong>: <code>mean</code> [default]</p>
+
+                
+                  <img src="https://grr.iossifovlab.com/hg19/scores/fitCons2/FitCons2_E069/statistics/histogram_FitCons2_E069.png" alt="HISTOGRAM">
+                
+                <div class="attribute-source">source: FitCons2_E069</div>
+              </div>
+            </div>
+          
+        </div>
+
+        <div class="annotator-line ">
+          <div class="annotator">
+            <div class="annotator-title">Annotator type: position_score</div>
+          </div>
+
+          
+            <div class="annotator-description">
+              <p>Annotator to use with genomic scores depending on genomic position like
+phastCons, phyloP, FitCons2, etc.</p>
+
+<p><a href="https://www.iossifovlab.com/gpfuserdocs/administration/annotation.html#position-score" target="_blank">More info</a></p>
+
+<ul>
+<li><strong>input_annotatable</strong>: <code>hg19_annotatable</code></li>
+</ul>
+
+            </div>
+          
+
+          
+            <div class="resource">
+              <div><b>Resource</b></div>
+              <div class="resource-info">Id: <a href="https://grr.iossifovlab.com/hg19/scores/fitCons2/FitCons2_E069/index.html">
+                      hg19/scores/fitCons2/FitCons2_E069</a></div>
+              <div class="resource-info">Type: position_score</div>
+              
+                <div class="resource-info">Summary:</div>
+                <div>
+                  Cell-type specific FitCons scores for Brain Cingulate Gyrus (E069)
+
+                </div>
+              
+            </div>
+          
+        </div>
+      </div>
+    
+  </body>
+<html>
