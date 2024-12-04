@@ -21,5 +21,5 @@ print(ps.get_region_scores(chrom, pos_beg, pos_end, "phyloP100way"))
 
 print("\nVARIANTS")
 ass = build_score_from_resource_id("hg38/variant_frequencies/gnomAD_4.1.0/exomes/ALL").open()
-for chrom, pos, ref, alt, [score] in ass.fetch_region(chrom, pos_beg, pos_end, ["AF"]):
+for pos, ref, alt, [score] in ass.fetch_region(chrom, pos_beg, pos_end, ["AF"]):
     print(pos, ref, alt, score)
