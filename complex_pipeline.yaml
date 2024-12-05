@@ -28,7 +28,7 @@ annotators:
     input_annotatable: normalized_allele
     attributes:
     - name: gnomAD_4.1_af
-      source: AF_percent 
+      source: AF
 
 - effect_annotator:
     gene_models: hg38/gene_models/MANE/1.3
