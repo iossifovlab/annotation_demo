@@ -1,0 +1,9 @@
+name: annotation 
+channels:
+  - conda-forge
+  - bioconda
+  - default 
+  - iossifovlab
+dependencies:
+  - gpf_dae
+  - ipython
