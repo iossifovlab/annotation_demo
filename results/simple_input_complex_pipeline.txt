@@ -3,16 +3,16 @@ chr1	1287138	C	A					0.81		nonsense	ENST00000379116.10:SCNN1D:nonsense:383/802(T
 chr1	3602485	AC	A			0.955	0.907	0.81		frame-shift	ENST00000356575.9:MEGF6:frame-shift:82/1541	frame-shift	{'MEGF6': 17650.0}	1.76e+04		0.593	0.593	0.593	0.593	0.641	0.593	0.593	0.593
 chr1	12115730	G	A					0.81		splice-site	ENST00000263932.7:TNFRSF8:splice-site:316/595	splice-site	{'TNFRSF8': 3646.0}	3.65e+03		0.867	0.867	0.867	0.867	0.867	0.867	0.867	0.867
 chr1	15929267	G	GA			0.317	0.318	0.529		frame-shift	ENST00000375759.8:SPEN:frame-shift:1010/3664	frame-shift	{'SPEN': 31.5}	31.5		0.687	0.687	0.687	0.687	0.687	0.687	0.687	0.687
-chr1	20639952	C	T	Pathogenic	Autosomal_recessive_early-onset_Parkinson_disease_6			0.81	0.000822	nonsense	ENST00000321556.5:PINK1:nonsense:246/581(Arg->End)	nonsense	{'PINK1': 15305.5}	1.53e+04		0.751	0.751	0.751	0.751	0.751	0.751	0.751	0.751
+chr1	20639952	C	T	Pathogenic	Autosomal_recessive_early-onset_Parkinson_disease_6			0.81	8.22e-06	nonsense	ENST00000321556.5:PINK1:nonsense:246/581(Arg->End)	nonsense	{'PINK1': 15305.5}	1.53e+04		0.751	0.751	0.751	0.751	0.751	0.751	0.751	0.751
 chr1	21257524	C	T					0.81		splice-site	ENST00000374893.11:ECE1:splice-site:277/770	splice-site	{'ECE1': 797.0}	797		0.917	0.917	0.917	0.917	0.917	0.917	0.917	0.917
 chr1	22910448	C	T					0.81		nonsense	ENST00000374630.8:EPHB2:nonsense:857/986(Gln->End)	nonsense	{'EPHB2': 588.0}	588		0.626	0.553	0.626	0.626	0.707	0.707	0.707	0.707
 chr1	27550357	G	GT	Pathogenic	Neurodevelopmental_abnormality|AHDC1-related_intellectual_disability_-_obstructive_sleep_apnea_-_mild_dysmorphism_syndrome|not_provided	0.134	0.484	0.537		frame-shift	ENST00000673934.1:AHDC1:frame-shift:586/1603	frame-shift	{'AHDC1': 960.0}	960		0.663	0.663	0.663	0.663	0.663	0.663	0.663	0.663
-chr1	32077257	C	T					0.81	0.000342	nonsense	ENST00000336294.10:TMEM39B:nonsense:177/492(Arg->End)	nonsense	{'TMEM39B': 9336.0}	9.34e+03		0.707	0.662	0.707	0.707	0.707	0.707	0.707	0.707
-chr1	34165789	CG	C			0.603			6.84e-05	intergenic	intergenic:intergenic:intergenic:intergenic	frame-shift	{}			0.079	0.079	0.079	0.0515	0.079	0.14	0.14	0.14
+chr1	32077257	C	T					0.81	3.42e-06	nonsense	ENST00000336294.10:TMEM39B:nonsense:177/492(Arg->End)	nonsense	{'TMEM39B': 9336.0}	9.34e+03		0.707	0.662	0.707	0.707	0.707	0.707	0.707	0.707
+chr1	34165789	CG	C			0.603			6.84e-07	intergenic	intergenic:intergenic:intergenic:intergenic	frame-shift	{}			0.079	0.079	0.079	0.0515	0.079	0.14	0.14	0.14
 chr1	40409787	T	A					0.81		nonsense	ENST00000372718.8:SMAP2:nonsense:118/429(Tyr->End)	nonsense	{'SMAP2': 9724.0}	9.72e+03		0.751	0.751	0.751	0.751	0.751	0.751	0.751	0.751
 chr1	41583044	C	CG			0.457	0.8	0.81		frame-shift	ENST00000372583.6:HIVEP3:frame-shift:585/2406	frame-shift	{'HIVEP3': 9012.0}	9.01e+03		0.649	0.662	0.612	0.649	0.649	0.662	0.662	0.662
-chr1	145845711	G	GTG						0.005	frame-shift	ENST00000334513.6:NUDT17:frame-shift:24/328	frame-shift	{'NUDT17': 10520.0}	1.05e+04		0.569	0.569	0.569	0.569	0.569	0.569	0.569	0.569
-chr1	151427960	C	T			0.386	0.42	0.81	0.000137	missense	ENST00000271715.7:POGZ:missense:314/1410(Ser->Asn)	missense	{'POGZ': 292.0}	292	yes	0.751	0.751	0.751	0.751	0.751	0.751	0.751	0.751
+chr1	145845711	G	GTG						5e-05	frame-shift	ENST00000334513.6:NUDT17:frame-shift:24/328	frame-shift	{'NUDT17': 10520.0}	1.05e+04		0.569	0.569	0.569	0.569	0.569	0.569	0.569	0.569
+chr1	151427960	C	T			0.386	0.42	0.81	1.37e-06	missense	ENST00000271715.7:POGZ:missense:314/1410(Ser->Asn)	missense	{'POGZ': 292.0}	292	yes	0.751	0.751	0.751	0.751	0.751	0.751	0.751	0.751
 chr1	151406993	G	GGTAC			0.39	0.279	0.308		frame-shift	ENST00000271715.7:POGZ:frame-shift:821/1410	frame-shift	{'POGZ': 292.0}	292	yes	0.751	0.751	0.751	0.751	0.751	0.751	0.751	0.751
 chr1	151405427	T	TCGTCATCA			0.648	0.595	0.699		frame-shift	ENST00000271715.7:POGZ:frame-shift:1203/1410	frame-shift	{'POGZ': 292.0}	292	yes	0.687	0.687	0.687	0.687	0.687	0.687	0.687	0.687
 chr1	151406013	G	A	Pathogenic	not_provided			0.81		nonsense	ENST00000271715.7:POGZ:nonsense:1008/1410(Arg->End)	nonsense	{'POGZ': 292.0}	292	yes	0.624	0.624	0.624	0.624	0.624	0.624	0.624	0.624
