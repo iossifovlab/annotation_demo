@@ -69,5 +69,5 @@ annotators:
       internal: true
 
 - position_score:
-    resource_id: hg19/scores/fitCons2/FitCons2_E06*
+    resource_id: hg19/scores/fitCons2/E06*
     input_annotatable: hg19_annotatable 
