@@ -6,4 +6,5 @@ channels:
   - iossifovlab
 dependencies:
   - gpf_dae
+  - gain-core
   - ipython
